@@ -1,0 +1,125 @@
+@font-face {
+  font-family: Vicenza;
+  src: url(root/fonts/Vicenza.ttf);
+}
+@font-face {
+  font-family: PT Sans;
+  src: url("https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@400;700&display=swap");
+}
+
+:root {
+  /* colour variables */
+  --clr-primary: #39383e;
+  --clr-primary-hover: #6b6b6b;
+  --clr-background: #f4f4f4;
+}
+
+body {
+  font-family: PT Sans;
+  background: var(--clr-background);
+}
+
+/* Navbar with hyperlinks and name */
+.nav-list {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 6rem;
+  margin-top: 4.5rem;
+}
+
+.nav-item {
+  list-style: none;
+  margin-right: 3rem;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: var(--clr-primary);
+  font-size: 0.9rem;
+}
+
+.nav-item a:hover {
+    color: var(--clr-primary-hover);
+    transition: color 0.2s ease-out;
+    -moz-transition: color 0.2s ease-out;
+    -webkit-transition: color 0.2s ease-out;
+    -o-transition: color 0.2s ease-out;
+}
+
+.nav-item:first-child {
+  margin-right: auto;
+  margin-left: 6.6rem;
+}
+
+.nav-item:first-child a {
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* circle logo in center */
+.gm-text {
+  display: flex;
+  justify-content: center;
+  margin-top: -7.25rem;
+}
+
+.gm-text h2 {
+  font-family: Vicenza;
+  font-size: 3.5rem;
+  font-weight: normal;
+  color: var(--clr-background);
+  pointer-events: none;
+}
+
+.gm-circle {
+  display: flex;
+  justify-content: center;
+  margin-top: -3rem;
+  margin-left: -0.2rem;
+}
+
+#circle {
+  width: 4.7rem;
+  height: 4.7rem;
+  border-radius: 50%;
+  background: var(--clr-primary);
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 3px solid var(--clr-primary);
+  margin-left: 9rem;
+  margin-right: 9rem;
+
+  padding: 0;
+}
+.main-text {
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
+  line-height: 4.8rem;
+  padding-left: 8.9rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.main-text a {
+  color: var(--clr-primary);
+  font-family: Vicenza;
+  font-size: 10rem;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.main-text a:hover {
+  color: var(--clr-primary-hover);
+  transition: color 0.2s ease-out;
+  -moz-transition: color 0.2s ease-out;
+  -webkit-transition: color 0.2s ease-out;
+  -o-transition: color 0.2s ease-out;
+}
