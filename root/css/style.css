@@ -25,27 +25,29 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 6rem;
+  margin-right: 7rem;
   margin-top: 4.5rem;
 }
 
 .nav-item {
   list-style: none;
-  margin-right: 3rem;
+  margin-right: 2rem;
 }
 
 .nav-item a {
   text-decoration: none;
   color: var(--clr-primary);
   font-size: 0.9rem;
+  display: inline-block;
+  transform:scaleX(1.1)
 }
 
 .nav-item a:hover {
-    color: var(--clr-primary-hover);
-    transition: color 0.2s ease-out;
-    -moz-transition: color 0.2s ease-out;
-    -webkit-transition: color 0.2s ease-out;
-    -o-transition: color 0.2s ease-out;
+  color: #7a7a7a;
+  transition: color 0.2s ease-out;
+  -moz-transition: color 0.2s ease-out;
+  -webkit-transition: color 0.2s ease-out;
+  -o-transition: color 0.2s ease-out;
 }
 
 .nav-item:first-child {
@@ -87,6 +89,8 @@ body {
   background: var(--clr-primary);
 }
 
+/* dividing line */
+
 hr {
   display: block;
   height: 1px;
@@ -97,6 +101,8 @@ hr {
 
   padding: 0;
 }
+
+/* large links (projects, resume, experience) */
 .main-text {
   margin-top: 1.5rem;
   margin-bottom: 5rem;
@@ -114,12 +120,38 @@ hr {
   font-size: 10rem;
   font-weight: normal;
   text-decoration: none;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  display: inline-block;
+  transition: transform 1s;
+}
+.main-text a:hover {
+    color: var(--clr-primary-hover);
+    transform: translateX(1rem);
 }
 
-.main-text a:hover {
-  color: var(--clr-primary-hover);
-  transition: color 0.2s ease-out;
-  -moz-transition: color 0.2s ease-out;
-  -webkit-transition: color 0.2s ease-out;
-  -o-transition: color 0.2s ease-out;
+/* about section */
+.about-text {
+  display: flex;
+  margin-top: -15rem;
+  margin-left: 53rem;
+  margin-right: 9rem;
+  margin-bottom: 0rem;
+  flex-direction: column;
+  justify-content: right;
+}
+
+.about-text h2 {
+  font-family: Vicenza;
+  font-size: 4rem;
+  font-weight: normal;
+  color: var(--clr-primary);
+  margin: -1rem;
+  margin-left: 20.3rem;
+}
+
+.about-text p {
+  font-family: PT Sans;
+  color: var(--clr-primary);
+  line-height: 140%;
 }
