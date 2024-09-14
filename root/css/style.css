@@ -19,13 +19,17 @@ body {
   background: var(--clr-background);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Navbar with hyperlinks and name */
 .nav-list {
   margin: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin-right: 7rem;
+  margin-right: 7.4rem;
   margin-top: 4.5rem;
 }
 
@@ -52,7 +56,7 @@ body {
 
 .nav-item:first-child {
   margin-right: auto;
-  margin-left: 6.6rem;
+  margin-left: 7rem;
 }
 
 .nav-item:first-child a {
@@ -64,12 +68,13 @@ body {
 .gm-text {
   display: flex;
   justify-content: center;
-  margin-top: -7.25rem;
+  margin-top: -6.6rem;
+  margin-left: 0.7rem;
 }
 
 .gm-text h2 {
   font-family: Vicenza;
-  font-size: 3.5rem;
+  font-size: 3.8rem;
   font-weight: normal;
   color: var(--clr-background);
   pointer-events: none;
@@ -78,14 +83,13 @@ body {
 .gm-circle {
   display: flex;
   justify-content: center;
-  margin-top: -3rem;
+  margin-top: -2.75rem;
   margin-left: -0.2rem;
 }
 
-#circle {
-  width: 4.7rem;
-  height: 4.7rem;
-  border-radius: 50%;
+#square {
+  width: 4.1rem;
+  height: 3.55rem;
   background: var(--clr-primary);
 }
 
@@ -154,4 +158,66 @@ hr {
   font-family: PT Sans;
   color: var(--clr-primary);
   line-height: 140%;
+}
+
+/* projects section */
+
+.projects{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: -3rem;
+}
+
+.projects h1{
+    font-family: Vicenza;
+    font-weight: normal;
+    font-size: 7rem;
+    color: var(--clr-primary);
+
+}
+
+/* iq-gen project section */
+
+.iq-gen {
+    display: flex;
+    margin-left: 5rem;
+}
+
+.iq-gen img{
+    width: 22rem;
+    border-radius: 1.5rem;
+}
+
+#iq-gen-title {
+    font-family: Vicenza;
+    font-size: 6rem;
+    margin-left: 1rem;
+    margin-top: 5rem;
+    color: var(--clr-primary);
+
+}
+
+/* about iq gen */
+.about-iq {
+    display: flex;
+    margin-left: 28rem;
+    margin-right: 30rem;
+    margin-top: -22rem;
+}
+
+.iq-gen-photo2 {
+    margin-top: 4rem;
+    margin-right: 5rem;
+}
+
+.iq-gen-photo2 img{
+    width: 36rem;
+    border-radius: 1.5rem;
+}
+
+.iq-gen-photo2 span p{
+    padding-top: 7.5rem;
+    margin-right: 37rem;
+    margin-left: 20rem;
 }
