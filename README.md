@@ -1,2 +1,2 @@
 # portfolio-website
-Personal portfolio website, created with typescript and html
+Personal portfolio website, made with CSS and HTML
