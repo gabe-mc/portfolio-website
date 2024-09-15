@@ -221,3 +221,229 @@ hr {
     margin-right: 37rem;
     margin-left: 20rem;
 }
+
+#experience {
+    display: flex;
+    justify-content: center;
+}
+
+#experience h1{
+    font-family: Vicenza;
+    font-size: 7rem;
+    color: var(--clr-primary);
+    font-weight: normal;
+    margin-bottom: 5rem;
+}
+
+/* sgc experience */
+
+.sgc {
+    display: flex;
+    margin-left: 5rem;
+}
+
+.sgc img{
+    width: 20%;
+}
+
+.sgc h2 {
+    font-family: Vicenza;
+    font-size: 6rem;
+    font-weight: normal;
+    margin-left: 1rem;
+    margin-top: -1rem;
+    color: var(--clr-primary);
+}
+
+
+.sgc h2 a{
+    text-decoration: none;
+    color: var(--clr-primary);
+}
+
+.sgc h2 a:hover{
+    color: var(--clr-primary-hover);
+}
+
+.sgc #p{
+    font-family: PT Sans;
+    margin-left: -31rem;
+    margin-top: 5em;
+    color: car(--clr-primary);
+    font-size: 1.1rem;
+    
+}
+
+#sgc-description p{
+    font-family: PT Sans;
+    margin-top: -9rem;
+    margin-left: 22.8rem;
+    margin-right: 23rem;
+}
+
+/* cmh experience */
+
+.cmh {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-right: 5rem;
+    margin-top: 10rem;
+}
+
+.cmh img{
+    width: 20%;
+}
+
+.cmh h2{
+    font-family: Vicenza;
+    font-size: 6rem;
+    font-weight: normal;
+    margin-right: 1rem;
+    margin-top: -1rem;
+    color: var(--clr-primary);
+}
+
+.cmh h2 a{
+    text-decoration: none;
+    color: var(--clr-primary);
+}
+
+.cmh h2 a:hover{
+    color: var(--clr-primary-hover);
+}
+
+.cmh #p {
+    font-family: PT Sans;
+    margin-right: -20.9rem;
+    margin-top: 5.6rem;
+    color: car(--clr-primary);
+    font-size: 1.1rem;
+}
+
+#cmh-description {
+    font-family: PT Sans;
+    margin-top: -9.8rem;
+    margin-left: 22.95rem;
+    margin-right: 23rem;
+}
+
+.csbk {
+    display: flex;
+    margin-left: 5rem;
+    margin-top: 10rem;
+}
+
+.csbk img{
+    width: 20%;
+}
+
+.csbk h2{
+    font-family: Vicenza;
+    font-size: 6rem;
+    font-weight: normal;
+    margin-left: 1rem;
+    margin-top: -1rem;
+    color: var(--clr-primary);
+}
+
+
+.csbk h2 a{
+    text-decoration: none;
+    color: var(--clr-primary);
+}
+
+.csbk h2 a:hover{
+    color: var(--clr-primary-hover);
+}
+
+.csbk #p {
+    font-family: PT Sans;
+    margin-left: -7.5rem;
+    margin-top: 5.5rem;
+    color: car(--clr-primary);
+    font-size: 1.1rem;
+}
+
+#csbk-description {
+    font-family: PT Sans;
+    margin-top: -9.8rem;
+    margin-left: 23.05rem;
+    margin-right: 23rem;
+}
+
+#box {
+    width: 10rem;
+    height: 10rem;
+}
+
+#resume {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+#resume h1 {
+    font-family: Vicenza;
+    font-size: 7rem;
+    color: var(--clr-primary);
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.resume-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    margin-top: -3rem;
+}
+
+.resume-link img{
+    margin-top: -2rem;
+    width: 28%;
+    
+}
+
+.resume-link p{
+    font-family: PT Sans;
+    color: var(--clr-primary);
+
+}
+
+.resume-link #download{
+    margin-top: -2rem;
+}
+
+
+.resume-link #download a{
+    color: var(--clr-primary)
+}
+
+
+.resume-link #download a:hover {
+    color: var(--clr-primary-hover);
+}
+
+#end-line {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #bebebe;
+    margin-top: 2.5rem;
+    margin-left: 9rem;
+    margin-right: 9rem;
+}
+
+#end-writing {
+    display: flex;
+    margin-left: 9rem;
+    margin-right: 9rem;
+    margin-bottom: 1.5rem;
+    justify-content: space-between;
+}
+
+#end-writing span{
+    font-family: PT Sans;
+    color: #bebebe;
+}
