@@ -15,7 +15,7 @@ export default function Navbar() {
 
     const handleMouseEnter = () => {
         if (!isPlaying && lottieRef.current) {
-            lottieRef.current.setSpeed(1.15);
+            lottieRef.current.setSpeed(1.2);
             lottieRef.current.goToAndPlay(0, true);
             setIsPlaying(true);
         }
@@ -29,7 +29,7 @@ export default function Navbar() {
     return (
         <nav className="bg-white w-full">
             <div className="flex justify-between items-center pl-12 pr-20 py-4">
-                
+
                 <div
                     className="flex items-center relative"
                     onMouseEnter={handleMouseEnter}
@@ -55,18 +55,19 @@ export default function Navbar() {
                     </div>
                 </div>
 
-                
+
                 <div className="hidden sm:flex sm:space-x-16">
-                    <Link href="/projects" className="text-md font-medium text-black">
-                        projects
-                    </Link>
-                    <Link href="/experience" className="text-md font-medium text-black">
-                        experience
-                    </Link>
-                    <Link href="/contact" className="text-md font-medium text-black">
-                        contact
-                    </Link>
+                    {["projects", "experience", "contact"].map((label) => (
+                        <Link
+                            key={label}
+                            href={`/${label}`}
+                            className="relative text-md font-medium text-black after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+                        >
+                            {label}
+                        </Link>
+                    ))}
                 </div>
+
             </div>
         </nav>
     );
