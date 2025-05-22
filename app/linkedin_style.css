@@ -1,0 +1,13 @@
+.linkedin-guy {
+    animation: linkedin-movement 5s infinite
+}
+
+@keyframes linkedin-movement {
+    0% {
+        @apply bottom-64 right-64
+    }
+
+    100% {
+        @apply bottom-64 right-96
+    }
+}

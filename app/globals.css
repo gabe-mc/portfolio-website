@@ -5,7 +5,7 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  /* Custom font definition */
+  /* Font definition */
   --font-sans: 'Montserrat', sans-serif;
 }
 
@@ -13,5 +13,34 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans); /* Use Montserrat as the default font */
+  font-family: var(--font-sans);
+  /* Use Montserrat as the default font */
+}
+
+.walk-forward {
+  animation: walk-forward 8s linear forwards;
+}
+
+@keyframes walk-forward {
+  0% {
+    transform: translate(0, 0)
+  }
+
+  100% {
+    transform: translate(0px, 80px)
+  }
+}
+
+.walk-right {
+  animation: walk-forward 5s linear forwards;
+}
+
+@keyframes walk-forward {
+  0% {
+    transform: translate(0, 0)
+  }
+
+  100% {
+    transform: translate(50px, 0px)
+  }
 }

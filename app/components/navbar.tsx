@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useRef } from 'react';
 import type { LottieRefCurrentProps } from 'lottie-react';
-import animationData from '../../public/ball_animation.json';
+import animationData from '../animations/ball_animation.json';
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
@@ -29,7 +29,6 @@ export default function Navbar() {
     return (
         <nav className="bg-white w-full">
             <div className="flex justify-between items-center pl-12 pr-20 py-4">
-
                 <div
                     className="flex items-center relative"
                     onMouseEnter={handleMouseEnter}
