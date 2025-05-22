@@ -17,30 +17,3 @@ body {
   /* Use Montserrat as the default font */
 }
 
-.walk-forward {
-  animation: walk-forward 8s linear forwards;
-}
-
-@keyframes walk-forward {
-  0% {
-    transform: translate(0, 0)
-  }
-
-  100% {
-    transform: translate(0px, 80px)
-  }
-}
-
-.walk-right {
-  animation: walk-forward 5s linear forwards;
-}
-
-@keyframes walk-forward {
-  0% {
-    transform: translate(0, 0)
-  }
-
-  100% {
-    transform: translate(50px, 0px)
-  }
-}

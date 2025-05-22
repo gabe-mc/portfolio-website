@@ -21,8 +21,12 @@ export function useIconSequence(steps: Step[]) {
     if (idx >= steps.length) return;
 
     const { variant, duration, transform, transition } = steps[idx];
+    
     setVariant(variant);
-    setStyle({ transform, transition });
+        setStyle(prev => ({
+      transform:  transform   !== undefined ? transform   : prev.transform,
+      transition: transition !== undefined ? transition : prev.transition,
+    }));
 
     const t = setTimeout(() => {
       setIdx(i => i + 1);

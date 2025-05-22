@@ -1,23 +1,38 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import Image from "next/image";
 import AnimatedIcon from "./components/AnimatedIcon";
+import { useIconSequence, Step } from "@/hooks/useIconSequence";
 
-const Home = () => {
-  const [variant, setVariant] = useState<"walk-forward" | "idle">("walk-forward");
-    const [finalStyle, setFinalStyle] = useState<React.CSSProperties>({});
+export default function Home() {
+  
+  const steps = useMemo<Step[]>(() => [
+    { variant: "idle",         duration: 4000 },
+    {
+      variant: "walk-forward",
+      duration: 8000,
+      transform: "translateY(80px)",
+      transition: "transform 8s linear",
+    },
+    { variant: "idle",         duration: 7000 },
+    {
+      variant: "walk-right",
+      duration: 6000,
+      transform: "translate(70px, 80px)",
+      transition: "transform 6s linear",
+    },
+    { variant: "idle",         duration: 20000 },
+        {
+      variant: "walk-right",
+      duration: 3500,
+      transform: "translate(100px, 100px)",
+      transition: "transform 3.5s linear",
+    },
+    { variant: "idle",         duration: 1000 },
+  ], []);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setFinalStyle({
-      transform: "translateY(80px)" // Match 100% of the keyframes
-    });
-      setVariant("idle");
-    }, 8000); // Duration of 'walk-forward' animation
-
-    return () => clearTimeout(timeout);
-  }, []);
+  const { variant, style } = useIconSequence(steps);
 
   return (
     <div className="w-full h-full flex justify-center pt-10">
@@ -57,11 +72,9 @@ const Home = () => {
         </p>
       </div>
 
-      <div className="absolute top-[33.24rem] right-[31.6rem]">
-        <AnimatedIcon variant={variant} style={finalStyle}/>
+      <div className="absolute top-[33.24rem] right-[31.6rem]" style={style}>
+        <AnimatedIcon variant={variant}/>
       </div>
     </div>
   );
 };
-
-export default Home;
