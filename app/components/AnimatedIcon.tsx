@@ -16,12 +16,12 @@ const animationVariants: Record<Variant, AnimationVariant> = {
     src: LinkedinIdle,
   },
 
-   "walk-forward": {
+  "walk-forward": {
     className: "walk-forward",
     src: LinkedinWalkForwards,
   },
 
-     "walk-right": {
+  "walk-right": {
     className: "walk-right",
     src: LinkedinWalkRight,
   },

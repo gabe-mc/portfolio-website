@@ -72,7 +72,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="absolute top-[33.24rem] right-[31.6rem]" style={style}>
+      <div className="absolute top-[33.24rem] right-[31.6rem] cursor-pointer" style={style}>
         <AnimatedIcon variant={variant}/>
       </div>
     </div>
