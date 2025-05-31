@@ -6,33 +6,30 @@ import AnimatedIcon from "./components/AnimatedIcon";
 import { useIconSequence, Step } from "@/hooks/useIconSequence";
 
 export default function Home() {
-  
-  const steps = useMemo<Step[]>(() => [
-    { variant: "idle",         duration: 4000 },
+  const stepsLinkedIn = useMemo<Step[]>(() => [
+    { variant: "idle", duration: 12000 },
     {
       variant: "walk-forward",
-      duration: 8000,
-      transform: "translateY(80px)",
-      transition: "transform 8s linear",
+      duration: 3000,
+      transform: "translateY(40px)",
+      transition: "transform 3s linear",
     },
-    { variant: "idle",         duration: 7000 },
-    {
-      variant: "walk-right",
-      duration: 6000,
-      transform: "translate(70px, 80px)",
-      transition: "transform 6s linear",
-    },
-    { variant: "idle",         duration: 20000 },
-        {
-      variant: "walk-right",
-      duration: 3500,
-      transform: "translate(100px, 100px)",
-      transition: "transform 3.5s linear",
-    },
-    { variant: "idle",         duration: 1000 },
+    { variant: "idle", duration: 5000 },
   ], []);
 
-  const { variant, style } = useIconSequence(steps);
+  const stepsGitHub = useMemo<Step[]>(() => [
+    { variant: "idle", duration: 5000 },
+    {
+      variant: "walk-right",
+      duration: 5000,
+      transform: "translateX(75px) translateY(30px)",
+      transition: "transform 5s linear",
+    },
+    { variant: "idle", duration: 3000 },
+  ], []);
+
+  const linkedInAnim = useIconSequence(stepsLinkedIn);
+  const githubAnim = useIconSequence(stepsGitHub);
 
   return (
     <div className="w-full h-full flex justify-center pt-10">
@@ -72,9 +69,16 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="absolute top-[33.24rem] right-[31.6rem] cursor-pointer" style={style}>
-        <AnimatedIcon variant={variant}/>
+      {/* LinkedIn Icon */}
+      <div className="absolute top-[33.24rem] right-[31.6rem] cursor-pointer" style={linkedInAnim.style}>
+        <AnimatedIcon icon="linkedin" variant={linkedInAnim.variant} href="https://www.linkedin.com/in/gabrielmcfadyen" />
+
+      </div>
+
+      {/* GitHub Icon */}
+      <div className="absolute top-[33.34rem] right-[27rem] cursor-pointer" style={githubAnim.style}>
+        <AnimatedIcon icon="github" variant={githubAnim.variant} href="https://github.com/gabe-mc" />
       </div>
     </div>
   );
-};
+}
