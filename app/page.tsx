@@ -8,28 +8,40 @@ import { useIconSequence, Step } from "@/hooks/useIconSequence";
 export default function Home() {
   const stepsLinkedIn = useMemo<Step[]>(() => [
     { variant: "idle", duration: 12000 },
-    {
-      variant: "walk-forward",
-      duration: 3000,
-      transform: "translateY(40px)",
-      transition: "transform 3s linear",
-    },
+    // {
+    //   variant: "walk-forward",
+    //   duration: 3000,
+    //   transform: "translateY(40px)",
+    //   transition: "transform 3s linear",
+    // },
     { variant: "idle", duration: 5000 },
   ], []);
 
   const stepsGitHub = useMemo<Step[]>(() => [
     { variant: "idle", duration: 5000 },
-    {
-      variant: "walk-right",
-      duration: 5000,
-      transform: "translateX(75px) translateY(30px)",
-      transition: "transform 5s linear",
-    },
+    // {
+    //   variant: "walk-right",
+    //   duration: 5000,
+    //   transform: "translateX(75px) translateY(30px)",
+    //   transition: "transform 5s linear",
+    // },
     { variant: "idle", duration: 3000 },
   ], []);
 
+  const stepsMail = useMemo<Step[]>(() => [
+  { variant: "idle", duration: 5000 },
+  // {
+  //   variant: "walk-right",
+  //   duration: 5000,
+  //   transform: "translateX(75px) translateY(30px)",
+  //   transition: "transform 5s linear",
+  // },
+  { variant: "idle", duration: 3000 },
+], []);
+
   const linkedInAnim = useIconSequence(stepsLinkedIn);
   const githubAnim = useIconSequence(stepsGitHub);
+  const mailAnim = useIconSequence(stepsMail);
 
   return (
     <div className="w-full h-full flex justify-center pt-10">
@@ -76,8 +88,13 @@ export default function Home() {
       </div>
 
       {/* GitHub Icon */}
-      <div className="absolute top-[33.34rem] right-[27rem] cursor-pointer" style={githubAnim.style}>
+      <div className="absolute top-[33.34rem] right-[26.5rem] cursor-pointer" style={githubAnim.style}>
         <AnimatedIcon icon="github" variant={githubAnim.variant} href="https://github.com/gabe-mc" />
+      </div>
+
+      {/* Mail Icon */}
+      <div className="absolute top-[33.34rem] right-[21.3rem] cursor-pointer" style={mailAnim.style}>
+        <AnimatedIcon icon="mail" variant={mailAnim.variant} href="mailto:gabemcfadyen@icloud.com" />
       </div>
     </div>
   );

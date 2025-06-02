@@ -13,9 +13,9 @@ export default function AnimatedIcon({ icon, href, variant = "idle", style }: An
   if (!anim) return null;
 
   return (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a href={href} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
       <Image
-        className={`size-20 cursor-pointer ${anim.className}`}
+        className={`size-20 ${anim.className}`}
         src={anim.src}
         alt={icon}
         width={314}
