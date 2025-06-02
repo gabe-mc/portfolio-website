@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { animatedIconAssets, Variant, IconName } from "./iconassets";
 
 interface AnimatedIconProps {
@@ -14,9 +13,9 @@ export default function AnimatedIcon({ icon, href, variant = "idle", style }: An
 
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-      <Image
+      <img
         className={`size-20 ${anim.className}`}
-        src={anim.src}
+        src={anim.src.src}
         alt={icon}
         width={314}
         height={314}

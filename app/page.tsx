@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo } from "react";
-import Image from "next/image";
 import AnimatedIcon from "./components/AnimatedIcon";
 import { useIconSequence, Step } from "@/hooks/useIconSequence";
 
@@ -29,15 +28,15 @@ export default function Home() {
   ], []);
 
   const stepsMail = useMemo<Step[]>(() => [
-  { variant: "idle", duration: 5000 },
-  // {
-  //   variant: "walk-right",
-  //   duration: 5000,
-  //   transform: "translateX(75px) translateY(30px)",
-  //   transition: "transform 5s linear",
-  // },
-  { variant: "idle", duration: 3000 },
-], []);
+    { variant: "idle", duration: 5000 },
+    // {
+    //   variant: "walk-right",
+    //   duration: 5000,
+    //   transform: "translateX(75px) translateY(30px)",
+    //   transition: "transform 5s linear",
+    // },
+    { variant: "idle", duration: 3000 },
+  ], []);
 
   const linkedInAnim = useIconSequence(stepsLinkedIn);
   const githubAnim = useIconSequence(stepsGitHub);
@@ -46,7 +45,7 @@ export default function Home() {
   return (
     <div className="w-full h-full flex justify-center pt-10">
       <div className="relative">
-        <Image
+        <img
           src="/gabriel_big.png"
           alt="gabriel"
           width={600}

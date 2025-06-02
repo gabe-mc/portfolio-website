@@ -2,7 +2,6 @@
 
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import Image from 'next/image';
 import { useState, useRef } from 'react';
 import type { LottieRefCurrentProps } from 'lottie-react';
 import animationData from '../animations/ball_animation.json';
@@ -34,7 +33,7 @@ export default function Navbar() {
                     onMouseEnter={handleMouseEnter}
                 >
                     <Link href="/">
-                        <Image
+                        <img
                             src="/gm_logo.png"
                             alt="gm"
                             width={60}
