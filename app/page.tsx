@@ -17,7 +17,7 @@ export default function Home() {
   ], []);
 
   const stepsGitHub = useMemo<Step[]>(() => [
-    { variant: "idle", duration: 5000 },
+    { variant: "idle", duration: 1000 },
     // {
     //   variant: "walk-right",
     //   duration: 5000,
@@ -29,12 +29,18 @@ export default function Home() {
 
   const stepsMail = useMemo<Step[]>(() => [
     { variant: "idle", duration: 5000 },
-    // {
-    //   variant: "walk-right",
-    //   duration: 5000,
-    //   transform: "translateX(75px) translateY(30px)",
-    //   transition: "transform 5s linear",
-    // },
+    {
+      variant: "walk-right",
+      duration: 5000,
+      transform: "translateX(75px) translateY(30px)",
+      transition: "transform 5s linear",
+    },
+        {
+      variant: "walk-forward",
+      duration: 5000,
+      transform: "translateX(75px) translateY(80px)",
+      transition: "transform 5s linear",
+    },
     { variant: "idle", duration: 3000 },
   ], []);
 
@@ -92,7 +98,7 @@ export default function Home() {
       </div>
 
       {/* Mail Icon */}
-      <div className="absolute top-[33.34rem] right-[21.3rem] cursor-pointer" style={mailAnim.style}>
+      <div className="absolute top-[33.44rem] right-[21.3rem] cursor-pointer" style={mailAnim.style}>
         <AnimatedIcon icon="mail" variant={mailAnim.variant} href="mailto:gabemcfadyen@icloud.com" />
       </div>
     </div>
