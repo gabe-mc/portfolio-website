@@ -2,6 +2,7 @@ import LinkedinIdle from "../animations/linkedin_idle.webp";
 import LinkedinWalkForwards from "../animations/linkedin_walk_forward.webp";
 import LinkedinWalkRight from "../animations/linkedin_walk_right.webp";
 import LinkedinWalkLeft from "../animations/linkedin_walk_left.webp";
+import LinkedinWeights from "../animations/linkedin_weights.webp";
 
 import GithubIdle from "../animations/github_idle.webp";
 import GithubWalkForwards from "../animations/github_walk_forward.webp";
@@ -14,7 +15,7 @@ import MailWalkRight from "../animations/mail_walk_right.webp";
 import MailWalkLeft from "../animations/mail_walk_left.webp";
 import { StaticImageData } from "next/image";
 
-type Variant = "idle" | "walk-forward" | "walk-right" | "walk-left";
+type Variant = "idle" | "walk-forward" | "walk-right" | "walk-left" | "lift-weight";
 
 interface AnimationVariant {
   className: string;
@@ -30,6 +31,7 @@ export const animatedIconAssets: Record<IconName, Partial<Record<Variant, Animat
     "walk-forward": { className: "walk-forward", src: LinkedinWalkForwards },
     "walk-right":   { className: "walk-right",   src: LinkedinWalkRight },
     "walk-left":   { className: "walk-left",   src: LinkedinWalkLeft },
+    "lift-weight": { className: "lift-weight", src: LinkedinWeights}
   },
 
   github: {

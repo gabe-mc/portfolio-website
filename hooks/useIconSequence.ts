@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export type Variant = "idle" | "walk-forward" | "walk-right";
+export type Variant = "idle" | "walk-forward" | "walk-right" | "walk-left" | "lift-weight";
 
 export interface Step {
   variant: Variant;
