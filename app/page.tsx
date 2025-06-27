@@ -4,6 +4,8 @@ import { useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
 import AnimatedIcon from "./components/AnimatedIcon";
 import { useIconSequence, Step } from "@/hooks/useIconSequence";
+import { useEffect, useState } from "react";
+
 
 const ScrollLottie = dynamic(
   () => import("./components/scrollLottie"),
@@ -11,6 +13,19 @@ const ScrollLottie = dynamic(
 );
 
 export default function Home() {
+
+
+  const [showScrollArrow, setShowScrollArrow] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollArrow(window.scrollY < 60);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const stepsLinkedIn = useMemo<Step[]>(() => [
     { variant: "idle", duration: 20000 },
     {
@@ -211,7 +226,14 @@ export default function Home() {
           <AnimatedIcon icon="mail" variant={mailAnim.variant} href="mailto:gabemcfadyen@icloud.com" />
         </div>
 
-        <ScrollLottie />
+        <div
+          className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 transition-opacity duration-500 ${showScrollArrow ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
+        >
+          <ScrollLottie />
+        </div>
+
+
       </section>
 
       {/* Projects Section */}
@@ -221,7 +243,7 @@ export default function Home() {
       >
         <div className="flex items-center justify-between">
           {/* Arrow Buttons */}
-          <button onClick={handlePrev} className="text-black px-4 hover:scale-125 transition-transform">
+          <button onClick={handlePrev} className="text-black px-20 hover:scale-125 transition-transform">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
               strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 transform scale-x-[-1]">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -245,7 +267,7 @@ export default function Home() {
             </p>
           </div>
 
-          <button onClick={handleNext} className="text-black px-4 hover:scale-125 transition-transform">
+          <button onClick={handleNext} className="text-black px-20 hover:scale-125 transition-transform">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
               strokeWidth={1.5} stroke="currentColor" className="w-12 h-12">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
@@ -271,12 +293,14 @@ export default function Home() {
           {projects.map(proj => (
             <div
               key={proj.id}
-              className="relative flex-shrink-0 w-[384px] aspect-[3/4] bg-white rounded-[2.1rem] overflow-hidden shadow hover:shadow-lg transition-transform hover:-translate-y-2 hover:z-10 scroll-snap-align-start"
+              onClick={() => window.open(proj.buttons?.[0]?.href, "_blank")}
+              className="relative flex-shrink-0 w-[384px] aspect-[3/4] bg-white rounded-[2.1rem] overflow-hidden shadow hover:shadow-lg transition-transform hover:-translate-y-2 hover:z-10 scroll-snap-align-start select-none cursor-pointer"
             >
               <img
                 src={proj.img}
                 alt={proj.title}
                 className="object-cover w-full h-full"
+                draggable={false}
               />
               <div className="absolute bottom-4 left-4 flex gap-2">
                 {proj.buttons?.map((btn, idx) => (
@@ -286,12 +310,16 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`px-3 py-1 text-white rounded-[1.5rem] transition ${btn.color}`}
+                    onClick={(e) => e.stopPropagation()}
                   >
                     {btn.text}
                   </a>
                 ))}
               </div>
             </div>
+
+
+
           ))}
         </div>
       </section>
@@ -300,9 +328,123 @@ export default function Home() {
 
 
       {/* Experience Section */}
-      <section id="experience" className="min-h-screen bg-white px-6 py-20">
-        <h2 className="text-4xl font-bold text-center">Experience</h2>
+      <section id="experience" className="min-h-screen bg-white px-6 py-10">
+        <div className="text-center mx-auto overflow-x-auto py-5">
+          <h2 className="text-7xl font-serif text-center">my experience</h2>
+          <p className="py-4 font-sans font-extrabold text-[0.77rem] whitespace-nowrap inline-block">
+            BELOW IS MY WORK EXPERIENCE, INCLUDING BOTH INTERNSHIPS AND EXTRACIRRICULAR <br />
+            INVOLVMENT AT THE UNIVERSITY OF TORONTO. VIEW MY{' '}
+            <a
+              href="https://www.linkedin.com/in/gabrielmcfadyen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#0076be] underline"
+            >
+              LINKEDIN
+            </a>{' '}
+            FOR MORE DETAILS.
+          </p>
+        </div>
+
+        {/* Timeline Section */}
+        <div className="relative flex flex-col items-center my-16">
+          {/* Vertical line removed */}
+
+          {[
+            {
+              img: "/mercedes-logo.png",
+              title: "AI Engineer",
+              subtitle1: "Mercedes-Benz",
+              subtitle2: "Jun 2024 – September 2024",
+              text: "Worked on devoloping and testing conversational AI sales agents.",
+              borderColor: "#0076bd",
+            },
+            {
+              img: "/utmist-logo.png",
+              title: "Team Lead",
+              subtitle1: "UTMIST",
+              subtitle2: "Sep 2024 - Present",
+              text: "Lead a engineering team devoloping RespriaCheck.",
+              borderColor: "#0076bd",
+            },
+            {
+              img: "/sgc-logo.png",
+              title: "Events Coordinator",
+              subtitle1: "St. George Captial",
+              subtitle2: "Aug 2024 – June 2025",
+              text: "Coordinated club events, participated in ML research.",
+              borderColor: "#0076bd",
+            },
+            {
+              img: "/cmh-logo.png",
+              title: "IT Intern",
+              subtitle1: "Campbellford Memorial Hospital",
+              subtitle2: "Oct 2022 – Feb 2023",
+              text: "",
+              borderColor: "#0076bd",
+            },
+          ].map((item, i) => {
+            const isRight = i % 2 === 0;
+            return (
+              <div key={i} className="mb-20 relative">
+                <div
+                  className={`
+              inline-flex items-center
+              transition-transform duration-300
+              ${isRight ? "hover:translate-x-4" : "hover:-translate-x-4"}
+            `}
+                >
+                  {/* Left side */}
+                  <div className={`${!isRight ? "w-1/2 flex justify-end pr-8" : "w-fit pr-2"}`}>
+                    {!isRight && (
+                      <div className="max-w-xs text-right">
+                        <h3 className="text-2xl font-bold">{item.title}</h3>
+                        <div className="text-sm text-gray-600 leading-tight mb-2">
+                          <p>{item.subtitle1}</p>
+                          <p>{item.subtitle2}</p>
+                        </div>
+                        <p className="text-base">{item.text}</p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Center node */}
+                  <div className="relative z-10 flex-shrink-0">
+                    <div className="bg-white mx-auto flex items-center justify-center rounded-full w-[13.3rem] h-[13.3rem]">
+                      <div
+                        className="bg-white border-4 rounded-md overflow-hidden w-[12.5rem] h-[12.5rem]"
+                        style={{ borderColor: item.borderColor }}
+                      >
+                        <img
+                          src={item.img}
+                          alt={item.title}
+                          className="object-cover w-full h-full"
+                          draggable={false}
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right side */}
+                  <div className={`${isRight ? "w-1/2 flex justify-start pl-8" : "w-fit pl-2"}`}>
+                    {isRight && (
+                      <div className="max-w-xs text-left">
+                        <h3 className="text-2xl font-bold">{item.title}</h3>
+                        <div className="text-sm text-gray-600 leading-tight mb-2">
+                          <p>{item.subtitle1}</p>
+                          <p>{item.subtitle2}</p>
+                        </div>
+                        <p className="text-base">{item.text}</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </section>
+
     </main>
   );
 }
