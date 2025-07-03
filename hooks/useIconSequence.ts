@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export type Variant = "idle" | "walk-forward" | "walk-right" | "walk-left" | "lift-weight";
+export type Variant = "idle" | "walk-forward" | "walk-right" | "walk-left" | "lift-weight" | "wave" | "soccer" | "sword" | "basketball" | "jump";
 
 export interface Step {
   variant: Variant;

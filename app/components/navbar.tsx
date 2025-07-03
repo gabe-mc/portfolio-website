@@ -58,13 +58,14 @@ export default function Navbar() {
                     {["projects", "experience", "contact"].map((label) => (
                         <Link
                             key={label}
-                            href={`/${label}`}
+                            href={`#${label}`}
                             className="relative text-md font-medium text-black after:content-[''] after:absolute after:left-0 after:-bottom-0 after:h-[2px] after:w-0 after:bg-black after:transition-all after:duration-300 hover:after:w-full"
                         >
                             {label}
                         </Link>
                     ))}
                 </div>
+
 
             </div>
         </nav>
